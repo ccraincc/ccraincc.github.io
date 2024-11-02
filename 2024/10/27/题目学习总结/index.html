@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="ch" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>题目学习总结 | ccraincc</title><meta name="author" content="ccraincc"><meta name="copyright" content="ccraincc"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="题目学习总结 *对于png形式解密 1.010修改长宽 2.010直接观察 3.Stegsolve 数据分析 将红绿蓝末尾都打对勾 然后预览  之后观察是否有flag 4.stegsolve 数据分析 档案以上操作不能找到flag时可以点save bin重命名保存 再查看 *流量分析 1.根据题目进行流量分析 观察是否含有字符串 *压缩包相关 (1)伪加密 1.010打开判断是否为伪加密 压缩源文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="题目学习总结">
+<meta property="og:url" content="http://example.com/2024/10/27/%E9%A2%98%E7%9B%AE%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="ccraincc">
+<meta property="og:description" content="题目学习总结 *对于png形式解密 1.010修改长宽 2.010直接观察 3.Stegsolve 数据分析 将红绿蓝末尾都打对勾 然后预览  之后观察是否有flag 4.stegsolve 数据分析 档案以上操作不能找到flag时可以点save bin重命名保存 再查看 *流量分析 1.根据题目进行流量分析 观察是否含有字符串 *压缩包相关 (1)伪加密 1.010打开判断是否为伪加密 压缩源文">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/img/butterfly-icon.png">
+<meta property="article:published_time" content="2024-10-27T08:50:41.000Z">
+<meta property="article:modified_time" content="2024-11-02T07:01:25.313Z">
+<meta property="article:author" content="ccraincc">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/butterfly-icon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/10/27/%E9%A2%98%E7%9B%AE%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '题目学习总结',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-11-02 15:01:25'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">ccraincc</span></a><a class="nav-page-title" href="/"><span class="site-name">题目学习总结</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">题目学习总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-10-27T08:50:41.000Z" title="Created 2024-10-27 16:50:41">2024-10-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-11-02T07:01:25.313Z" title="Updated 2024-11-02 15:01:25">2024-11-02</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>题目学习总结</strong></p>
+<p>*对于png形式解密</p>
+<p>1.010修改长宽</p>
+<p>2.010直接观察</p>
+<p>3.Stegsolve 数据分析 将红绿蓝末尾都打对勾 然后预览  之后观察是否有flag</p>
+<p>4.stegsolve 数据分析 档案以上操作不能找到flag时可以点save bin重命名保存 再查看</p>
+<p>*流量分析</p>
+<p>1.根据题目进行流量分析 观察是否含有字符串</p>
+<p>*压缩包相关</p>
+<p>(1)伪加密</p>
+<p>1.010打开判断是否为伪加密</p>
+<p>压缩源文件目录区：</p>
+<p>50 4B 01 02：目录区文件头标记</p>
+<p>1F 00：压缩使用的 pkware 版本 或3F 00</p>
+<p>14 00：解压文件所需 pkware 版本</p>
+<p>00 00：全局方式位标记（<u>伪加密，改为 09 00 就提示有密码了</u>）</p>
+<p>原理就是修改了zip的全局方式位标记后，打开显示需要密码，实际没有密码</p>
+<p>所以需要将09改为00</p>
+<p>未加密的为50 4B 03 04 14 00 <u>00 00 08</u> 00</p>
+<p>（2）爆破</p>
+<p>1、暴力破解：尝试选择范围内所有的字符组合<br>例如：选择范围：数字 长度：1-6<br>从1开始跑到999999</p>
+<p>2、掩码：已知道密码某个位置的字符<br>掩码默认为：？<br>例如：掩码为：www.???.com 范围选小写a-z<br>从<a target="_blank" rel="noopener" href="http://www.aaaaa.com/">www.aaaaa.com</a> 跑到<a target="_blank" rel="noopener" href="http://www.zzzzz.com/">www.zzzzz.com</a></p>
+<p>3、字典：在字典中寻找密码<br>密码必须在字典内</p>
+<p>*编码转换</p>
+<p>目前已知</p>
+<p>1.零宽字符（幽灵字符）</p>
+<p>2.okk加密</p>
+<p>3.bianfuck加密</p>
+<p>4.JavaScript加密</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">ccraincc</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/10/27/%E9%A2%98%E7%9B%AE%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">http://example.com/2024/10/27/%E9%A2%98%E7%9B%AE%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a><a class="post-meta__tags" href="/tags/hexo/">hexo</a></div><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="prev-post pull-left" href="/2024/10/27/%E8%A7%A3%E7%A0%81%E7%BC%96%E7%A0%81%E5%92%8C%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="解码编码和流量分析"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">解码编码和流量分析</div></div></a><a class="next-post pull-right" href="/2024/10/27/markdow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="markdow学习笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">markdow学习笔记</div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a href="/2024/10/27/%E8%A7%A3%E7%A0%81%E7%BC%96%E7%A0%81%E5%92%8C%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="解码编码和流量分析"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-27</div><div class="title">解码编码和流量分析</div></div></a><a href="/2024/10/27/markdow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="markdow学习笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-27</div><div class="title">markdow学习笔记</div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info is-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">ccraincc</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/27/%E8%A7%A3%E7%A0%81%E7%BC%96%E7%A0%81%E5%92%8C%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" title="解码编码和流量分析">解码编码和流量分析</a><time datetime="2024-10-27T08:50:41.000Z" title="Created 2024-10-27 16:50:41">2024-10-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/27/%E9%A2%98%E7%9B%AE%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" title="题目学习总结">题目学习总结</a><time datetime="2024-10-27T08:50:41.000Z" title="Created 2024-10-27 16:50:41">2024-10-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/27/markdow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="markdow学习笔记">markdow学习笔记</a><time datetime="2024-10-27T07:14:30.000Z" title="Created 2024-10-27 15:14:30">2024-10-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/17/hello-world/" title="Hello World">Hello World</a><time datetime="2024-10-17T07:10:18.885Z" title="Created 2024-10-17 15:10:18">2024-10-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By ccraincc</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
